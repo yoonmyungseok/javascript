@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>datepicker</title>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    table{
+        width: 100%;
+    }
+    table,th,td{
+        border-collapse: collapse;
+    }
+    th,td{
+        border:1px solid #222;
+        padding: 5px 10px;
+    }
+    th{
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="input_date">
+        <div id="div_calendar" style="width: 300px; display:none">
+            <div>
+                <button type="button" onclick="changeMonth(-1);">&#60;</button>
+                <input type="number" id="year" value="2020" style="width: 80px; display:initial" onchange="changeYear();">
+                <select id="month" style="width: 80px; display:initial" onchange="changeMonth();">
+                    <option value="1">1월</option>
+                    <option value="2">2월</option>
+                    <option value="3">3월</option>
+                    <option value="4">4월</option>
+                    <option value="5">5월</option>
+                    <option value="6">6월</option>
+                    <option value="7">7월</option>
+                    <option value="8">8월</option>
+                    <option value="9">9월</option>
+                    <option value="10">10월</option>
+                    <option value="11">11월</option>
+                    <option value="12">12월</option>
+                </select>
+                <button type="button" onclick="changeMonth(1);">&#62;</button>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>일</th>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                        <th>토</th>
+                    </tr>
+                </thead>
+                <tbody id="tb_body"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="datepicker.js"></script>
+</body>
+</html>
