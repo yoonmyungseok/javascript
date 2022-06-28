@@ -18,16 +18,16 @@ $(function () {
             dateFormat: 'yy년 mm월 dd일'
         })
         .on("change", function () {
-                        from.datepicker("option", "maxDate", getDate(this));
-                    });
-
-            function getDate(element) {
-                var date;
-                try {
-                    date = $.datepicker.parseDate(dateFormat, element.value);
-                } catch (error) {
-                    date = null;
-                }
-                return date;
-            }
+            from.datepicker("option", "maxDate", getDate(this));
         });
+    
+    function getDate(element) {
+        var date;
+        try {
+            date = $.datepicker.parseDate(dateFormat, element.value);
+        } catch (error) {
+            date = null;
+        }
+        return date;
+    }
+});
